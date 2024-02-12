@@ -206,17 +206,40 @@ Description : DOM Elements.
 		<script>
 			document.addEventListener('DOMContentLoaded', function afterRender() {
 				// Task 1: Set the text content of all elements with the class 'companyName' and remove their border
-
-
-				// Task 2: Change the background color of the navigation bar
+				var companyNameMentions= document.getElementsByClassName("companyName");
+				for(let i = 0; i < companyNameMentions.length; i++){
+					companyNameMentions[i].textContent = "Jung-Hwan";
+					companyNameMentions[i].style.border = "none";
+				}
 				
 
+				// Task 2: Change the background color of the navigation bar
+				var navBar = document.getElementsByTagName("nav")
+				navBar[0].style.backgroundColor = "purple";
+
 				// Task 3: Hide the section titled 'What is full-stack?'
+				var findingHeader = document.getElementsByTagName("h2")
+				for(let i = 0; i < findingHeader.length; i++){
+					if(findingHeader[i].textContent == "What is full-stack?"){
+						console.log("test" + [i])
+					}
+				}
+				
 
 
 				// Task 4: Create a new <p> element and append it to the 'About Us' section
+				var findingHeader = document.getElementsByTagName("h2")
+				for(let i = 0; i < findingHeader.length; i++){
+					if(findingHeader[i].textContent == "About Us"){
+						var newDiv = document.createElement("p");
+						// Set the text content of the new div
+						newDiv.textContent = "This is a new paragraph";
+						// Append the new div to the body of the document
 
-
+						findingHeader[i].appendChild(newDiv);
+					}
+				}
+				
 				// Task 5: Add placeholders to input elements based on their corresponding label IDs
 
 
@@ -227,12 +250,14 @@ Description : DOM Elements.
 
 
 				// Task 8: Change the submit button text upon clicking and make it disabled
-
+				
 
 				// Task 9: Change the text color of each item in the 'Related Links' to green
-
+				
 
 				// Task 10: Add a red solid border to the footer
+				var footer = document.getElementsByTagName("footer")
+				footer[0].style.border = "red solid 5px";
 			});
 		</script>
 	</body>
