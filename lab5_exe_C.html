@@ -214,29 +214,26 @@ Description : DOM Elements.
 				
 
 				// Task 2: Change the background color of the navigation bar
-				var navBar = document.getElementsByTagName("nav")
-				navBar[0].style.backgroundColor = "purple";
+				var navBar = document.getElementsByTagName("nav")[0].style.backgroundColor = "purple";
 
 				// Task 3: Hide the section titled 'What is full-stack?'
 				var findingHeader = document.getElementsByTagName("h2")
 				for(let i = 0; i < findingHeader.length; i++){
 					if(findingHeader[i].textContent == "What is full-stack?"){
-						findingHeader[i].parentElement.innerHTML = "";
+						findingHeader[i].parentElement.style.display = "none";
 					}
 				}
-				
-
 
 				// Task 4: Create a new <p> element and append it to the 'About Us' section
 				var findingHeader = document.getElementsByTagName("h2")
-				for(let i = 0; i < findingHeader.length; i++){
+				for (let i = 0; i < findingHeader.length; i++){
 					if(findingHeader[i].textContent == "About Us"){
-						var newDiv = document.createElement("p");
+						var newParagraph = document.createElement("p");
 						// Set the text content of the new div
-						newDiv.textContent = "This is a new paragraph";
+						newParagraph.textContent = "This is a new paragraph created with DOM.";
 						// Append the new div to the body of the document
 
-						findingHeader[i].nextSibling = (newDiv);
+						findingHeader[i].after(newParagraph);
 					}
 				}
 				
