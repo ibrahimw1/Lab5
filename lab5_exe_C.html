@@ -221,7 +221,7 @@ Description : DOM Elements.
 				var findingHeader = document.getElementsByTagName("h2")
 				for(let i = 0; i < findingHeader.length; i++){
 					if(findingHeader[i].textContent == "What is full-stack?"){
-						console.log("test" + [i])
+						findingHeader[i].parentElement.innerHTML = "";
 					}
 				}
 				
@@ -236,7 +236,7 @@ Description : DOM Elements.
 						newDiv.textContent = "This is a new paragraph";
 						// Append the new div to the body of the document
 
-						findingHeader[i].appendChild(newDiv);
+						findingHeader[i].nextSibling = (newDiv);
 					}
 				}
 				
