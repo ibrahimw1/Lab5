@@ -264,7 +264,12 @@ Description : DOM Elements.
 
 
 				// Task 8: Change the submit button text upon clicking and make it disabled
-				
+				var findingButton = document.getElementsByTagName("input")
+				for(let i = 0; i < findingButton.length; i++){
+					if(findingButton[i].getAttribute("value") == "Submit"){
+						findingButton[i].setAttribute("onclick","this.disabled=true;")
+					}
+				}
 
 				// Task 9: Change the text color of each item in the 'Related Links' to green
 				
