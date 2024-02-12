@@ -238,10 +238,27 @@ Description : DOM Elements.
 				}
 				
 				// Task 5: Add placeholders to input elements based on their corresponding label IDs
+				var findingHeader = document.getElementsByTagName("input")
+				for(let i = 0; i < findingHeader.length; i++){
+					if(findingHeader[i].getAttribute("name") == "name"){
+						findingHeader[i].setAttribute("placeholder","enter name here")
+					}
 
+					if(findingHeader[i].getAttribute("name") == "email"){
+						findingHeader[i].setAttribute("placeholder","enter email here")
+					}
+				}
+
+				var findingHeader = document.getElementsByTagName("textarea")
+				findingHeader[0].setAttribute("placeholder","text")
 
 				// Task 6: Set the src attribute of the image
-
+				var findingImage = document.getElementsByTagName("img")
+				for(let i = 0; i < findingImage.length; i++){
+					if(findingImage[i].getAttribute("alt") == "Company logo"){
+						findingImage[i].setAttribute("src","./images/example.svg")
+					}
+				}
 
 				// Task 7: Add a new item in the navigation menu
 
