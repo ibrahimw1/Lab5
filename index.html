@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript String and Variable Exercise</title>
+</head>
+<body>
+    <script>
+        let firstName = "Ibrahim";
+        let lastName = "Wani";
+        let age = 19;
+        
+        
+        let fullName = firstName + " " + lastName;
+        console.log(fullName);
+
+        // Calculate Birth Year
+        let currentYear = new Date().getFullYear();
+        let birthYear = currentYear - age;
+        console.log(birthYear);
+
+        // String Manipulation
+        console.log(fullName.length);
+        console.log(fullName.toUpperCase());
+
+        // Template Literals
+        console.log(`Hello, my name is ${fullName} and I am ${age} years old. I was born in ${birthYear}.`);
+
+        // Bonus: Conditional Operator
+        let canVote = age > 18 ? true : false;
+        console.log(`I am eligible to vote: ${canVote}`);
+    </script>
+</body>
+</html>
