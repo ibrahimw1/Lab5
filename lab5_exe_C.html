@@ -195,7 +195,7 @@ Description : DOM Elements.
             <aside>
                 <h3>Related Links</h3>
                 <ul>
-                    <li><a href="#">W3School</a></li>
+                    <li ><a href="#">W3School</a></li>
                     <li><a href="#">AWS</a></li>
                 </ul>
             </aside>
@@ -225,26 +225,21 @@ Description : DOM Elements.
 				}
 
 				// Task 4: Create a new <p> element and append it to the 'About Us' section
-				var findingHeader = document.getElementsByTagName("h2")
-				for (let i = 0; i < findingHeader.length; i++){
-					if(findingHeader[i].textContent == "About Us"){
-						var newParagraph = document.createElement("p");
-						// Set the text content of the new div
-						newParagraph.textContent = "This is a new paragraph created with DOM.";
-						// Append the new div to the body of the document
-
-						findingHeader[i].after(newParagraph);
-					}
-				}
+				var aboutUsSection = document.querySelector('section:nth-of-type(1)');
+				var newParagraph = document.createElement('p');
+				newParagraph.textContent = 'This is a new paragraph';
+				newParagraph.style.color = "red";
+				aboutUsSection.appendChild(newParagraph);
+			
 				
 				// Task 5: Add placeholders to input elements based on their corresponding label IDs
 				var findingHeader = document.getElementsByTagName("input")
 				for(let i = 0; i < findingHeader.length; i++){
-					if(findingHeader[i].getAttribute("name") == "name"){
+					if(findingHeader[i].getAttribute("name") == "Name"){
 						findingHeader[i].setAttribute("placeholder","enter name here")
 					}
 
-					if(findingHeader[i].getAttribute("name") == "email"){
+					if(findingHeader[i].getAttribute("name") == "Email"){
 						findingHeader[i].setAttribute("placeholder","enter email here")
 					}
 				}
@@ -261,22 +256,37 @@ Description : DOM Elements.
 				}
 
 				// Task 7: Add a new item in the navigation menu
+				var navBar = document.getElementsByTagName("nav")[0]
+				var navBarContents = navBar.children[0]
+
+
+				var newParagraph = document.createElement("li");
+				// Set the text content of the new div
+				newParagraph.innerHTML = "<a href=\"#\">Blog</a>";
+				// Append the new div to the body of the document
+
+				navBarContents.appendChild(newParagraph);
+				console.log(navBarContents.innerHTML)
 
 
 				// Task 8: Change the submit button text upon clicking and make it disabled
-				var findingButton = document.getElementsByTagName("input")
-				for(let i = 0; i < findingButton.length; i++){
-					if(findingButton[i].getAttribute("value") == "Submit"){
-						findingButton[i].setAttribute("onclick","this.disabled=true;")
+				var buttonSearch = document.getElementsByTagName("input")
+				for(let i = 0; i < buttonSearch.length; i++){
+					if(buttonSearch[i].getAttribute("value") == "Submit"){
+						buttonSearch[i].setAttribute("onclick","this.disabled=true;this.value=\"Submitted\"")
 					}
 				}
 
 				// Task 9: Change the text color of each item in the 'Related Links' to green
-				
+				var relatedLinksContainer = document.querySelector('aside ul');
+				var relatedLinksAnchors = relatedLinksContainer.getElementsByTagName('a');
+				for (var i = 0; i < relatedLinksAnchors.length; i++) {
+					relatedLinksAnchors[i].style.color = "green";
+				}
 
 				// Task 10: Add a red solid border to the footer
 				var footer = document.getElementsByTagName("footer")
-				footer[0].style.border = "red solid 5px";
+				footer[0].style.border = "red solid 2px";
 			});
 		</script>
 	</body>
