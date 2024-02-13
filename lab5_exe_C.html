@@ -235,17 +235,17 @@ Description : DOM Elements.
 				// Task 5: Add placeholders to input elements based on their corresponding label IDs
 				var findingHeader = document.getElementsByTagName("input")
 				for(let i = 0; i < findingHeader.length; i++){
-					if(findingHeader[i].getAttribute("name") == "Name"){
-						findingHeader[i].setAttribute("placeholder","enter name here")
+					if(findingHeader[i].getAttribute("name") == "name"){
+						findingHeader[i].setAttribute("placeholder","Name")
 					}
 
-					if(findingHeader[i].getAttribute("name") == "Email"){
-						findingHeader[i].setAttribute("placeholder","enter email here")
+					if(findingHeader[i].getAttribute("name") == "email"){
+						findingHeader[i].setAttribute("placeholder","Email")
 					}
 				}
 
 				var findingHeader = document.getElementsByTagName("textarea")
-				findingHeader[0].setAttribute("placeholder","text")
+				findingHeader[0].setAttribute("placeholder","Message")
 
 				// Task 6: Set the src attribute of the image
 				var findingImage = document.getElementsByTagName("img")
